@@ -104,13 +104,6 @@ train1 = other1[:int(len(other1)*per)+1] + tecp1[:int(len(tecp1)*per)+1] + trcp1
 test1 = other1[int(len(other1)*per)+1:] + tecp1[int(len(tecp1)*per)+1:] + trcp1[int(len(trcp1)*per)+1:] + trap1[int(len(trap1)*per)+1:] + pip1[int(len(pip1)*per)+1:] + terp1[int(len(terp1)*per)+1:] + trnap1[int(len(trnap1)*per)+1:] + trwp1[int(len(trwp1)*per)+1:] + trip1[int(len(trip1)*per)+1:]
 
 
-#train1 = other1[:] + tecp1[:] + trcp1[:] + trap1[:] + pip1[:] + terp1[:] + trnap1[:] + trwp1[:] + trip1[:]
-#test1 = other1[int(len(other1)*per)+1:] + tecp1[int(len(tecp1)*per)+1:] + trcp1[int(len(trcp1)*per)+1:] + trap1[int(len(trap1)*per)+1:] + pip1[int(len(pip1)*per)+1:] + terp1[int(len(terp1)*per)+1:] + trnap1[int(len(trnap1)*per)+1:] + trwp1[int(len(trwp1)*per)+1:] + trip1[int(len(trip1)*per)+1:]
-
-#test1=train1[52211:]
-#train1=train1[:52211]
-
-
 train2 = other2[:int(len(other2)*per)+1] + tecp2[:int(len(tecp2)*per)+1] + trcp2[:int(len(trcp2)*per)+1] + trap2[:int(len(trap2)*per)+1] + pip2[:int(len(pip2)*per)+1] + terp2[:int(len(terp2)*per)+1] + trnap2[:int(len(trnap2)*per)+1] + trwp2[:int(len(trwp2)*per)+1] + trip2[:int(len(trip2)*per)+1]
 test2 = other2[int(len(other2)*per)+1:] + tecp2[int(len(tecp2)*per)+1:] + trcp2[int(len(trcp2)*per)+1:] + trap2[int(len(trap2)*per)+1:] + pip2[int(len(pip2)*per)+1:] + terp2[int(len(terp2)*per)+1:] + trnap2[int(len(trnap2)*per)+1:] + trwp2[int(len(trwp2)*per)+1:] + trip2[int(len(trip2)*per)+1:]
 

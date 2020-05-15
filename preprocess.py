@@ -65,33 +65,9 @@ def mapWordToId(sent_contents, word_dict):
 		T.append(t)
 	return T
 
-# def readWordEmb(word_dict, fname, embSize=100):
-# 	print ("Reading word vectors")
-# 	wv = []
-# 	wl = []
-# 	with open(fname, 'r') as f:
-# 		for line in f :
-# 			vs = line.split()
-# 			if len(vs) < 50 :
-# 				continue
-# 			vect = map(float, vs[1:])
-# 			wv.append(vect)
-# 			wl.append(vs[0])
-# 	wordemb = []
-# 	count = 0
-# 	for word, id in word_dict.iteritems():
-# 		if str(word) in wl:
-# 			wordemb.append(wv[wl.index(str(word))])
-# 		else:
-# 			count += 1
-# 			wordemb.append(np.random.rand(embSize))
-# 	wordemb = np.asarray(wordemb, dtype='float32')
-# 	print ("Number of unknown word in word embedding", count)
-# 	return wordemb
 
 
 
-# emb_file = './i2b2/glove_100d_w9_pubmed.txt'
 label_dict = {'other':0, 'TrWP': 1, 'TeCP': 2, 'TrCP': 3, 'TrNAP': 4, 'TrAP': 5, 'PIP': 6, 'TrIP': 7, 'TeRP': 8}
 rev_label_dict = {0:'other', 1:'TrWP', 2:'TeCP', 3:'TrCP', 4:'TrNAP', 5:'TrAP', 6:'PIP', 7:'TrIP', 8:'TeRP'}
 
@@ -103,7 +79,7 @@ fp_train.close()
 word_list, rev_word_list = makeWordList(sent_padded)
 print(len(word_list),len(sent_padded[0]))
 sent_contents = mapWordToId(sent_padded, word_list)
-# wv = readWordEmb(word_list, emb_file)
+
 
 W =  np.array(sent_contents)
 Y = [label_dict[label] for label in sent_labels]
@@ -115,7 +91,6 @@ print(W.shape,Y_onehot.shape)
 with open('./i2b2/i2b2-train.pickle', 'wb') as handle:
 	pickle.dump(W, handle)
 	pickle.dump(Y_onehot, handle)
-	# pickle.dump(wv, handle)
 	pickle.dump(word_list, handle)
 	pickle.dump(rev_word_list,handle)
 	pickle.dump(label_dict, handle)
@@ -130,7 +105,7 @@ fp_test.close()
 word_list, rev_word_list = makeWordList(sent_padded)
 print(len(word_list),len(sent_padded[0]))
 sent_contents = mapWordToId(sent_padded, word_list)
-# wv = readWordEmb(word_list, emb_file)
+
 
 W =  np.array(sent_contents)
 Y = [label_dict[label] for label in sent_labels]
@@ -145,7 +120,6 @@ with open('./i2b2/i2b2-test.pickle', 'wb') as handle:
 	pickle.dump(sent_lengths,handle)
 	pickle.dump(W, handle)
 	pickle.dump(Y_onehot, handle)
-	# pickle.dump(wv, handle)
 	pickle.dump(word_list, handle)
 	pickle.dump(rev_word_list,handle)
 	pickle.dump(label_dict, handle)
