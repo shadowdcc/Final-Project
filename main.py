@@ -2,7 +2,7 @@ import numpy as np
 from sklearn import metrics
 from sklearn.metrics import classification_report
 import pickle
-import source.lstm_max as ModelSource
+import source.crnn as ModelSource
 
 fp_correct = open('./results/crnn-max-all-features_correct.txt','wb')
 fp_wrong = open('./results/crnn-max-all-features_wrong.txt','wb')
